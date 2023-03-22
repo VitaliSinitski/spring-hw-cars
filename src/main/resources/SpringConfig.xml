@@ -11,5 +11,18 @@
     http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <bean id="car" class="org.vitali.Car"/>
+    <bean id="bigCar" class="org.vitali.BigCar"/>
+
+    <bean id="firm" class="org.vitali.Firm">
+        <property name="age" value="8"/>
+        <property name="name" value="Audi"/>
+        <property name="carsList">
+            <list value-type="org.vitali.ICar">
+                <ref bean="car"/>
+                <ref bean="bigCar"/>
+            </list>
+        </property>
+    </bean>
 
 </beans>
